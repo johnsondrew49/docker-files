@@ -1,0 +1,19 @@
+services:
+    speedtest-tracker:
+        image: lscr.io/linuxserver/speedtest-tracker:latest
+        restart: unless-stopped
+        container_name: speedtest-tracker
+        ports:
+            - 8080:80
+            - 8443:443
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - APP_KEY=base64:wdqqEq7UyAvuCqIazrjJAhKLvSNBW467QGq8SC3NKgk=
+            - DB_CONNECTION=sqlite
+            - SPEEDTEST_SCHEDULE=59 * * * *
+            - SPEEDTEST_SERVERS=48475
+            - PRUNE_RESULTS_OLDER_THAN=14 #Deletes Results Older Than 14 Days
+        volumes:
+            - /Docker/speed-test-tracker/config:/config
+        network_mode: "macvlan"
