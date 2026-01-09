@@ -1,0 +1,37 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  evaluation_interval: 15s
+alerting:
+  alertmanagers:
+    - static_configs:
+      - targets: []
+      scheme: http
+      timeout: 10s
+      api_version: v2
+scrape_configs:
+  - job_name: prometheus
+    honor_timestamps: true
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+      - targets:
+        - localhost:9090
+  - job_name: Mini PC # Change to whatever you like
+    static_configs:
+      - targets: ['192.168.1.234:9100'] #Beelink Mini PC
+  - job_name: Proxmox Cluster
+    static_configs:
+      - targets: ['192.168.1.249:9100'] #3061 Micro
+      - targets: ['192.168.1.252:9100'] #7070 Micro
+      - targets: ['192.168.1.251:9100'] #3060 Micro
+
+  - job_name: Raspberry Pi # Change to whatever you like
+    static_configs:
+      - targets: ['192.168.1.229:9100'] #Raspberry Pi
+
+  - job_name: pihole
+    static_configs:
+      - targets: ["192.168.1.229:9617"]
