@@ -57,7 +57,7 @@ services:
       - WEBUI_PORT=8081
       - TORRENTING_PORT=6882
     volumes:
-      - /Docker/qbittorrent/config:/config
+      - /Docker/qbittorrent-tv/config:/config
       - /nas/Torrents:/nas/Torrents #optional
     ports:
       - 8081:8081
