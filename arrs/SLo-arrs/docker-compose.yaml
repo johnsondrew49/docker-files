@@ -11,9 +11,8 @@ services:
       - /nas/Films:/nas/Films #optional
       - /nas/Torrents:/nas/Torrents #optional
     ports:
-      - 7878:7878
+      - 7880:7878
     restart: unless-stopped
-    network_mode: "macvlan"
 
   bittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
@@ -22,15 +21,13 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-      - WEBUI_PORT=8080
-      - TORRENTING_PORT=6881
+      - WEBUI_PORT=8083
+      - TORRENTING_PORT=6884
     volumes:
       - /Docker/qbittorrent-SLo/config:/config
       - /nas/Torrents:/nas/Torrents #optional
     ports:
-      - 8080:8080
-      - 6881:6881
-      - 6881:6881/udp
+      - 8083:8083
+      - 6884:6884
+      - 6884:6884/udp
     restart: unless-stopped
-    network_mode: "macvlan"
-
