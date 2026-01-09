@@ -1,1 +1,0 @@
-sudo docker run -d --name plex --network=host -e TZ="Europe/London" -e PLEX_CLAIM="<CLAIM-TOKEN" -v /Docker/plex/config:/config -v /nas/Films:/Films -v /nas/Music:/Music -v /nas/TV:/TV -v /Docker/plex/transcode:/transcode -v /Docker/plex/data:/data --device=/dev/dri:/dev/dri plexinc/pms-docker
