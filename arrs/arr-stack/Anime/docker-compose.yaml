@@ -14,7 +14,7 @@ services:
       - 7879:7878
     restart: unless-stopped
 
-  sonarr:
+  sonarr-Anime:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr-Anime
     environment:
