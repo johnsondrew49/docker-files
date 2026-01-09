@@ -11,7 +11,7 @@ services:
       - /nas/Films:/nas/Films #optional
       - /nas/Torrents:/nas/Torrents #optional
     ports:
-      - 78789:7878
+      - 7879:7878
     restart: unless-stopped
 
   sonarr:
@@ -36,10 +36,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-      - WEBUI_PORT=8081
-      - TORRENTING_PORT=6882
+      - WEBUI_PORT=8082
+      - TORRENTING_PORT=6883
     volumes:
-      - /Docker/qbittorrent/config:/config
+      - /Docker/qbittorrent-anime/config:/config
       - /nas/Torrents:/nas/Torrents #optional
     ports:
       - 8082:8082
