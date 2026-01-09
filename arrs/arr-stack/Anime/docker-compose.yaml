@@ -11,7 +11,7 @@ services:
       - /nas/Films:/nas/Films #optional
       - /nas/Torrents:/nas/Torrents #optional
     ports:
-      - 78789:7879
+      - 78789:7878
     restart: unless-stopped
 
   sonarr:
