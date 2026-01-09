@@ -12,4 +12,3 @@ services:
       - TZ=<timezone>
     ports:
       - 8181:8181
-    network_mode: "macvlan"
