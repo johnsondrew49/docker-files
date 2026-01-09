@@ -105,3 +105,13 @@ services:
     ports:
       - 6767:6767
     restart: unless-stopped
+
+  byparr:
+    image: ghcr.io/thephaseless/byparr:latest
+    restart: unless-stopped
+    init: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8191:8191"
