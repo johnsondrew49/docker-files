@@ -1,7 +1,6 @@
-version: '3'
 services:
   tautulli:
-    image: ghcr.io/tautulli/tautulli
+    image: ghcr.io/tautulli/tautulli:latest
     container_name: plex-stats
     restart: unless-stopped
     volumes:
