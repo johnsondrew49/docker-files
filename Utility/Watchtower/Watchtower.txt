@@ -1,0 +1,6 @@
+docker run -d \
+  --name watchtower \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL="https://discord.com/api/webhooks/1345833095991005255/QWlciesAJls90Nrtfly9cR9tQdgz5xdbPScmii4RKU9p6vNN7Y_nEuojvt1OBiVoygka"/slack \
+  -e WATCHTOWER_NOTIFICATION_TEMPLATE="{{range .}}{{.Time.Format \"2006-01-02 15:04:05\"}} ({{.Level}}): {{.Message}}{{println}}{{end}}" \
+  containrrr/watchtower
