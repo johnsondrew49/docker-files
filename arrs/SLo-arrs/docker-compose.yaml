@@ -14,7 +14,7 @@ services:
       - 7880:7878
     restart: unless-stopped
 
-  bittorrent:
+  slo-qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent-SLo
     environment:
