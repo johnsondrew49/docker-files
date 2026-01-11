@@ -1,4 +1,4 @@
-Services:
+services:
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
