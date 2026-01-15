@@ -105,3 +105,18 @@ services:
     ports:
       - 6767:6767
     restart: unless-stopped
+
+  gluetun:
+    image: qmcgaw/gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - VPN_SERVICE_PROVIDER=windscribe
+      - VPN_TYPE=wireguard
+      - WIREGUARD_PRIVATE_KEY=iPZmz17iqfP7LmgdSh9UXlyTlgsMfuEjGqfdUAzZvl0=
+      - WIREGUARD_ADDRESSES=100.101.143.197/32
+      - WIREGUARD_PRESHARED_KEY=0H3hYoyyihhq+OdC7BgJWd0RJB7Qn00C66U7GpF98jw=
+      - SERVER_REGIONS=united kingdom
+    restart: unless-stopped
