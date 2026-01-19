@@ -6,4 +6,5 @@ services:
     ports:
       - "7476:7476"
     volumes:
-      - ./qui:/config
+
+      - /Docker/qui/config:/config
