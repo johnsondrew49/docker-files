@@ -9,3 +9,4 @@ services:
       - /Docker/Audiobookshelf/metadata:/metadata
     environment:
       - TZ=Europe/London
+    restart: unless-stopped
