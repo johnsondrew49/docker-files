@@ -10,7 +10,7 @@ services:
       - UPTIME_APP_CLIENT_HOST=http://192.168.1.219
       - DB_CONNECTION_STRING=mongodb://mongodb:27017/uptime_db
       - CLIENT_HOST=http://192.168.1.219
-      - JWT_SECRET=my_secret
+      - JWT_SECRET=Claudiaj22-
     depends_on:
       - mongodb
   mongodb:
