@@ -6,10 +6,10 @@ services:
     ports:
       - "52345:52345"
     environment:
-      - UPTIME_APP_API_BASE_URL=http://localhost:52345/api/v1
-      - UPTIME_APP_CLIENT_HOST=http://localhost
+      - UPTIME_APP_API_BASE_URL=http://192.168.1.219:52345/api/v1
+      - UPTIME_APP_CLIENT_HOST=http://192.168.1.219
       - DB_CONNECTION_STRING=mongodb://mongodb:27017/uptime_db
-      - CLIENT_HOST=http://localhost
+      - CLIENT_HOST=http://192.168.1.219
       - JWT_SECRET=my_secret
     depends_on:
       - mongodb
