@@ -54,7 +54,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-      - WEBUI_PORT=8081
+      - WEBUI_PORT=8084
       - TORRENTING_PORT=6882
     volumes:
       - /Docker/qbittorrent-tv/config:/config
